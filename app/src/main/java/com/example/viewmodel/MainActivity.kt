@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //=====================================================
-
+    /*
     override fun onStart() {
         logar(valor = "onStart")
         super.onStart()
@@ -56,13 +55,11 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
+     */
+
     private fun logar(tag: String = "Ciclo de Vida", valor: String) {
         Log.d(tag, valor)
     }
-
-
-
-    //===============================================
 
 
     private fun validaContador() {
