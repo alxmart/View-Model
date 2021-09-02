@@ -17,16 +17,12 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mViewModel: MainViewModel
 
-    var contador: Int = 0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initDados()
-        //initContador()
         initClick()
-        validaContador()
     }
 
     private fun initDados() {
@@ -42,27 +38,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun validaContador() {
-        if(contador > 5) {
-            contador = 0
-        }
-    }
-
     private fun initClick() {
 
         btnDados.setOnClickListener {
-            contador++
-            validaContador()
+            mViewModel.Contador()
 
         }
 
         btnMostrar.setOnClickListener {
-            Toast.makeText( this,
-             "Valor Contador: ${contador.toString()}",
+            Toast.makeText( applicationContext,
+             "Valor Contador: ${mViewModel.mContador.value}",
              Toast.LENGTH_SHORT).show()
-
         }
     }
-
-
 }
